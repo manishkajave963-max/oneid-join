@@ -383,3 +383,141 @@ async function leaveCall() {
         console.error(error);
     }
 }
+
+let localIsMain = false;
+
+
+localVideo.onclick =
+    function () {
+
+        makeLocalMain();
+    };
+
+
+remoteVideo.onclick =
+    function () {
+
+        makeRemoteMain();
+    };
+
+
+function makeLocalMain() {
+
+    localIsMain = true;
+
+    localVideo.style.position =
+        "absolute";
+
+    localVideo.style.left =
+        "0";
+
+    localVideo.style.top =
+        "0";
+
+    localVideo.style.right =
+        "0";
+
+    localVideo.style.bottom =
+        "0";
+
+    localVideo.style.width =
+        "100%";
+
+    localVideo.style.height =
+        "100%";
+
+    localVideo.style.borderRadius =
+        "0";
+
+    localVideo.style.zIndex =
+        "1";
+
+
+    remoteVideo.style.position =
+        "absolute";
+
+    remoteVideo.style.top =
+        "20px";
+
+    remoteVideo.style.right =
+        "20px";
+
+    remoteVideo.style.left =
+        "auto";
+
+    remoteVideo.style.bottom =
+        "auto";
+
+    remoteVideo.style.width =
+        "120px";
+
+    remoteVideo.style.height =
+        "160px";
+
+    remoteVideo.style.borderRadius =
+        "12px";
+
+    remoteVideo.style.zIndex =
+        "10";
+}
+
+
+function makeRemoteMain() {
+
+    localIsMain = false;
+
+    remoteVideo.style.position =
+        "absolute";
+
+    remoteVideo.style.left =
+        "0";
+
+    remoteVideo.style.top =
+        "0";
+
+    remoteVideo.style.right =
+        "0";
+
+    remoteVideo.style.bottom =
+        "0";
+
+    remoteVideo.style.width =
+        "100%";
+
+    remoteVideo.style.height =
+        "100%";
+
+    remoteVideo.style.borderRadius =
+        "0";
+
+    remoteVideo.style.zIndex =
+        "1";
+
+
+    localVideo.style.position =
+        "absolute";
+
+    localVideo.style.top =
+        "20px";
+
+    localVideo.style.right =
+        "20px";
+
+    localVideo.style.left =
+        "auto";
+
+    localVideo.style.bottom =
+        "auto";
+
+    localVideo.style.width =
+        "120px";
+
+    localVideo.style.height =
+        "160px";
+
+    localVideo.style.borderRadius =
+        "12px";
+
+    localVideo.style.zIndex =
+        "10";
+}
