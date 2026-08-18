@@ -1,25 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Join Meeting</title>
 
-<script>
-function openApp(){
+    <meta charset="UTF-8">
 
-const params = new URLSearchParams(window.location.search);
-const room = params.get("room");
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-window.location = "oneid://join?room=" + room;
+    <title>OneID Video Meeting</title>
 
-}
-</script>
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
-<body onload="openApp()">
+<body>
 
-<h2>Opening meeting...</h2>
+<div id="app">
+
+    <!-- ========================= -->
+    <!-- JOIN SCREEN -->
+    <!-- ========================= -->
+
+    <div
+        id="joinScreen"
+        class="screen"
+    >
+
+        <div class="join-card">
+
+            <h1>OneID Meeting</h1>
+
+            <p id="roomText">
+                Room
+            </p>
+
+            <input
+                id="nameInput"
+                type="text"
+                placeholder="Enter your name"
+                maxlength="30"
+            >
+
+            <button
+                id="joinButton"
+            >
+                Join Meeting
+            </button>
+
+            <p
+                id="joinStatus"
+                class="status"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ========================= -->
+    <!-- CALL SCREEN -->
+    <!-- ========================= -->
+
+    <div
+        id="callScreen"
+        class="call-screen hidden"
+    >
+
+        <!-- Remote video -->
+
+        <div
+            id="remoteVideo"
+            class="remote-video"
+        ></div>
+
+
+        <!-- Local video -->
+
+        <div
+            id="localVideo"
+            class="local-video"
+        ></div>
+
+
+        <!-- Top information -->
+
+        <div class="top-info">
+
+            <div>
+                OneID Meeting
+            </div>
+
+            <div id="connectedRoom">
+                Room
+            </div>
+
+        </div>
+
+
+        <!-- Controls -->
+
+        <div class="controls">
+
+            <button
+                id="muteButton"
+                class="control"
+            >
+                🎤
+            </button>
+
+            <button
+                id="cameraButton"
+                class="control"
+            >
+                📹
+            </button>
+
+            <button
+                id="endButton"
+                class="end"
+            >
+                ☎
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Agora Web SDK -->
+
+<script src="https://download.agora.io/sdk/release/AgoraRTC_N-4.24.0.js"></script>
+
+<script src="app.js"></script>
 
 </body>
+
 </html>
